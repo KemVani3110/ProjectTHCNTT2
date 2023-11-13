@@ -5,18 +5,33 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: aliceblue;
+
 
   #show-employee-btn {
-    height: 10%;
-    width: 15%;
-    justify-self: flex-start;
-
-    font-size: 1.5rem;
-    opacity: 1;
-    background: transparent;
-    transition: all .5s;
+    height: 50px;
+    width: 150px;
+    font-size: 1.2rem;
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    &:hover {
+      background-color: #2980b9;
+    }
   }
+
+  #show-employee-btn:active {
+    transform: scale(0.98);
+  }
+
   #show-employee-btn:hover {
     cursor: pointer;;
     background-color: aquamarine;
@@ -35,23 +50,47 @@
     display: grid;
     padding: 20px;
     grid-template-columns: 1fr 1fr;
-
     opacity: 0;
     transition: all .5s;
     background-color: bisque;
+    border-radius: 25px;
 
     #employee-close {
       position: absolute;
       left: 97%;
       top: 6%;
+      cursor: pointer;
     }
 
     #employee-detail {
       height: 100%;
       width: 90%;
-
-      background-color: aliceblue;
+      background-color: #ecf0f1;
       border-radius: 10px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      transition: transform 0.3s ease-in-out;
+      border-bottom: 2px solid #bdc3c7;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+
+
+    #employee-detail:hover {
+      transform: scale(1.05);
+    }
+
+    #employee-detail p {
+      margin: 10px 0;
+      font-size: 1.2rem;
+      color: #333;
+      transition: color 0.3s ease;
+    }
+    #employee-detail:hover p {
+      color: #e74c3c;
     }
   }
   #employee-container.open {
@@ -62,8 +101,31 @@
   }
 }
 
-#footer{
+#footer {
   height: 5%;
-  position: absolute;
+  width: 100%;
+  background-color: #333;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
   bottom: 0;
+  z-index: 999;
+  border-top: 2px solid #555;
+  box-shadow: 0px -5px 15px rgba(0, 0, 0, 0.2);
+  font-size: 1rem;
+  margin: 0 0 10px 10px;
+  padding: 10px;
+
+  a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 10px;
+    transition: color 0.3s ease;
+  }
+
+  a:hover {
+    color: #3498db;
+  }
 }
